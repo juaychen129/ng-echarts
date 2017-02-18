@@ -1,0 +1,23 @@
+{
+  "name": "ng-echarts",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Juay Chen"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/juaychen129/ng-echarts",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.10",
+    "echarts": "3.4.0",
+    "underscore": "^1.8.3"
+  }
+}

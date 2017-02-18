@@ -1,19 +1,29 @@
 {
   "name": "ng-echarts",
-  "version": "3.0.0",
-  "author":{
-    "name": "liekkas.zeng",
-    "url": "https://liekkas.github.io/"
+  "version": "1.0.0",
+  "description": "angularjs版echarts 支持最新ECharts3.x",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^1.5.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/liekkas/ng-echarts.git"
+    "url": "git+https://github.com/juaychen129/ng-echarts.git"
   },
-  "devDependencies": {
-    "del": "^1.1.1",
-    "gulp": "^3.8.10",
-    "gulp-concat": "^2.4.3",
-    "gulp-jshint": "^1.9.0",
-    "gulp-uglify": "^1.0.2"
-  }
+  "author": "juaychen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juaychen129/ng-echarts/issues"
+  },
+  "homepage": "https://github.com/juaychen129/ng-echarts#readme"
 }
