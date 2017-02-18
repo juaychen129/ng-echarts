@@ -1,5 +1,5 @@
 /**
- * Created by liekkas.zeng on 2015/1/7.
+ * Created by juaychen on 2017/2/18.
  */
 angular.module('ng-echarts', []).directive('echarts', ['$timeout', function ($timeout) {
     return {
@@ -23,16 +23,28 @@ angular.module('ng-echarts', []).directive('echarts', ['$timeout', function ($ti
                         instance.on(eventName, handler);
                     });
                 });
+            }
 
+            function brushAreas(instance, areas) {
+                if (angular.isArray(areas)) {
+                    instance.dispatchAction({
+                        type: 'brush',
+                        areas: areas
+                    });
+                }
+            }
+
+            function initChart(instance) {
+                $timeout(function () {
+                    setOption(instance, scope.option);
+                    bindEvents(instance, scope.event);
+                    brushAreas(instance, scope.brushAreas);
+                }, 0);
             }
 
 
             var chart = echarts.init(element[0]);
-            $timeout(function () {
-                setOption(chart, scope.option);
-                bindEvents(chart, scope.event);
-            }, 0);
-
+            initChart(chart);
 
             scope.$watch("option", function (newValue, oldValue) {
                 if (newValue && !angular.equals(newValue, oldValue)) {
@@ -49,8 +61,9 @@ angular.module('ng-echarts', []).directive('echarts', ['$timeout', function ($ti
 
         },
         scope: {
-            event: '=ecEvent',
-            option: '=ecOption'
+            event: '=echartsEvent',
+            option: '=echartsOption',
+            brushAreas: '=echartsBrushAreas'
         },
         restrict: 'EA'
     }

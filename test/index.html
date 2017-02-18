@@ -11,7 +11,11 @@
 <div class="container-fluid">
 
     <div ng-controller="Ctrl1">
-        <echarts class="col-md-6 echarts" ec-option="lineOption" ec-event="lineEvent"></echarts>
+        <echarts style="width: 800px;height:600px;"
+                 echarts-option="lineOption"
+                 echarts-event="lineEvent"
+                 echarts-brush-areas="lineBrush">
+        </echarts>
     </div>
 
 </div>
