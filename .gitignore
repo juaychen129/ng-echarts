@@ -1,7 +1,5 @@
 .temp
-.idea/*
+.idea
 node_modules/
 
 vendor/
-bower.json
-package.json
